@@ -1,0 +1,13 @@
+version: "2.4"
+services:
+  base:
+    build: .
+    volumes:
+      - ".:/app"
+
+  terminal:
+    extends:
+      service: base
+    command: bash
+    environment:
+      IMDB_DATASET_URL: "https://datasets.imdbws.com"
