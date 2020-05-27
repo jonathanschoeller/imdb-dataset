@@ -4,6 +4,7 @@ services:
     build: .
     volumes:
       - ".:/app"
+      - "~/.config/gcloud:/root/.config/gcloud"
 
   terminal:
     extends:
@@ -11,3 +12,4 @@ services:
     command: bash
     environment:
       IMDB_DATASET_URL: "https://datasets.imdbws.com"
+      GCP_PROJECT: "imdb-dataset"

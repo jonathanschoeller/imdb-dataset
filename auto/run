@@ -1,3 +1,4 @@
 #!/bin/bash -e
 
 ./auto/download-imdb
+./auto/upload-bq

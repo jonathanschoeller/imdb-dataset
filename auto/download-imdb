@@ -24,8 +24,4 @@ do
     else
         echo "Skipping $file download. Already exists."
     fi
-
-    echo "Uncompressing $file."
-    dest=${file%.gz}
-    pv $download_folder/$file | gunzip > $download_folder/$dest 
 done

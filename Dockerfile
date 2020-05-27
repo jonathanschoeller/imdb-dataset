@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
 
 ENV APP_HOME /app
 RUN apk update
