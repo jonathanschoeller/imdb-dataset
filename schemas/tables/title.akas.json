@@ -1,0 +1,50 @@
+[
+  {
+    "description": "a tconst, an alphanumeric unique identifier of the title",
+    "name": "title_id",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "a number to uniquely identify rows for a given titleId",
+    "name": "ordering",
+    "type": "INTEGER",
+    "mode": "NULLABLE"    
+  },
+  {
+    "description": "the localized title",
+    "name": "title",
+    "type": "STRING",
+    "mode": "NULLABLE"    
+  },
+  {
+    "description": "the region for this version of the title",
+    "name": "region",
+    "type": "STRING",
+    "mode": "NULLABLE"    
+  },
+  {
+    "description": "the language of the title",
+    "name": "language",
+    "type": "STRING",
+    "mode": "NULLABLE"    
+  },
+  {
+    "description": "Enumerated set of attributes for this alternative title. One or more of the following: \"alternative\", \"dvd\", \"festival\", \"tv\", \"video\", \"working\", \"original\", \"imdbDisplay\". New values may be added in the future without warning",
+    "name": "types",
+    "type": "STRING",
+    "mode": "NULLABLE"    
+  },
+  {
+    "description": "Additional terms to describe this alternative title, not enumerated",
+    "name": "attributes",
+    "type": "STRING",
+    "mode": "NULLABLE"    
+  },
+  {
+    "description": "0: not original title; 1: original title",
+    "name": "is_original_title",
+    "type": "INTEGER",
+    "mode": "NULLABLE"    
+  }
+]

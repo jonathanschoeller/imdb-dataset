@@ -1,0 +1,20 @@
+[
+  {
+    "description": "alphanumeric unique identifier of the title",
+    "name": "tconst",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "director(s) of the given title",
+    "name": "directors",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "writer(s) of the given title",
+    "name": "writers",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

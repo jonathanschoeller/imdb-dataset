@@ -1,0 +1,56 @@
+[
+  {
+    "description": "alphanumeric unique identifier of the title",
+    "name": "tconst",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "the type/format of the title (e.g. movie, short, tvseries, tvepisode, video, etc)",
+    "name": "title_type",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "the more popular title / the title used by the filmmakers on promotional materials at the point of release",
+    "name": "primary_title",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "original title, in the original language",
+    "name": "original_title",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "0: non-adult title; 1: adult title",
+    "name": "is_adult",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "represents the release year of a title. In the case of -TV series, it is the series start year",
+    "name": "start_year",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "TV series end year. NULL for all other title types",
+    "name": "end_year",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "primary runtime of the title, in minutes",
+    "name": "runtime_minutes",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "includes up to three genres associated with the title",
+    "name": "genres",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }
+]

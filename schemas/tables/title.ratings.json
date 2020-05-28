@@ -1,0 +1,20 @@
+[
+  {
+    "description": "alphanumeric unique identifier of the title",
+    "name": "tconst",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "weighted average of all the individual user ratings",
+    "name": "average_rating",
+    "type": "FLOAT",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "number of votes the title has received",
+    "name": "num_votes",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]

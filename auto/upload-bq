@@ -9,20 +9,22 @@ bq mk --force \
     $GCP_PROJECT:$data_set
 
 FILES=imdb-downloads/*.tsv.gz
+schema_folder=schemas/tables
 for file in $FILES
 do
     file_name=${file#*/}
-    table=${file_name%.tsv.gz}
-    table=$(echo "$table" | tr . _)
+    file_name_root=${file_name%.tsv.gz}
+    table=$(echo "$file_name_root" | tr . _)
     echo "Uploading $file_name to $table."
-    bq load --autodetect --max_bad_records=10 \
+    bq load --autodetect \
         --field_delimiter=tab \
         --null_marker="\N" \
         --quote "" \
         --replace --source_format=CSV \
         --skip_leading_rows=1 \
         $data_set.$table \
-        $file
+        $file \
+        $schema_folder/$file_name_root.json
 done
 
 

@@ -1,0 +1,26 @@
+[
+  {
+    "description": "alphanumeric identifier of episode",
+    "name": "tconst",
+    "type": "STRING",
+    "mode": "REQUIRED"
+  },
+  {
+    "description": "alphanumeric identifier of the parent -TV series",
+    "name": "parent_tconst",
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "season number the episode belongs to",
+    "name": "season_number",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  },
+  {
+    "description": "episode number of the tconst in the TV series",
+    "name": "episode_number",
+    "type": "INTEGER",
+    "mode": "NULLABLE"
+  }
+]
