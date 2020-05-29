@@ -27,8 +27,32 @@ Parameters:
   SecurityGroups:
     Type: List<AWS::EC2::SecurityGroup::Id>
     Default: 'sg-001e6dcfe1ab6b85c'
+  KmsKeyId:
+    Type: String
+    Default: 'f66c8ef4-7a9b-4e04-b821-a4d97da54ed2'
 
 Resources:
+  TaskRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Join ['', [!Ref ServiceName, TaskRole]]
+      Policies:
+        - PolicyName: AllowKMSDecrypt
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: "Allow"
+                Action:
+                  - "kms:Decrypt"
+                Resource:
+                  - !Sub "arn:aws:kms:${AWS::Region}:${AWS::AccountId}:key/${KmsKeyId}"
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: 'sts:AssumeRole'
+
   ExecutionRole:
     Type: AWS::IAM::Role
     Properties:
@@ -51,6 +75,7 @@ Resources:
         - FARGATE
       Cpu: 256
       Memory: 0.5GB
+      TaskRoleArn: !Ref TaskRole
       ExecutionRoleArn: !Ref ExecutionRole
       ContainerDefinitions:
         - Name: imdb-dataset
