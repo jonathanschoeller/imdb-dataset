@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+echo $GCP_CREDENTIALS > /tmp/gcp_key.json
+gcloud auth activate-service-account --key-file=/tmp/gcp_key.json

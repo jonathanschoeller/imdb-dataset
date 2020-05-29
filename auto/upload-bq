@@ -26,6 +26,3 @@ do
         $file \
         $schema_folder/$file_name_root.json
 done
-
-
-# gcloud auth activate-service-account --key-file $CREDENTIALS

@@ -1,4 +1,5 @@
 #!/bin/bash -e
 
 ./auto/download-imdb
+./auto/gcp-authenticate
 ./auto/upload-bq
