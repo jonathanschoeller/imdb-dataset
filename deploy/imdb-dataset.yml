@@ -3,14 +3,18 @@ Description: IMDB Dataset Project Stack
 Parameters:
   Image:
     Type: String
-
   EcsCluster: 
     Default: jonathans-cluster
     Type: String
-
   ServiceName:
     Default: 'imdb-dataset'
     Type: String
+  ImdbDatasetUrl:
+    Type: String
+    Default: 'https://datasets.imdbws.com'
+  GcpProject:
+    Type: String
+    Default: 'imdb-dataset'
 
 Resources:
   ExecutionRole:
@@ -39,6 +43,11 @@ Resources:
       ContainerDefinitions:
         - Name: imdb-dataset
           Image: !Ref Image
+          Environment:
+            - Name: IMDB_DATASET_URL
+              Value: !Ref ImdbDatasetUrl
+            - Name: GCP_PROJECT
+              Value: !Ref GcpProject
           LogConfiguration:
             LogDriver: awslogs
             Options:
