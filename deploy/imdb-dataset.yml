@@ -1,0 +1,20 @@
+Description: IMDB Dataset Project Stack
+
+Parameters:
+  AppVersion:
+    Type: String
+    Default: '0.1'
+
+  EcsCluster: 
+    Default: jonathans-cluster
+    Type: string
+
+Resources:
+  TaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      ContainerDefinitions:
+        - Name: imdb-dataset
+          Image: !Sub customer/companies-publisher:${AppVersion}
+
+  
