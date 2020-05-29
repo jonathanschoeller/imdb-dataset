@@ -45,4 +45,6 @@ jobs:
         with:
           name: imdb-dataset-stack
           template: deploy/imdb-dataset.yml
+          capabilities: CAPABILITY_NAMED_IAM
+          parameter-overrides: "Image=${{ steps.build-image.outputs.image }}"
     
