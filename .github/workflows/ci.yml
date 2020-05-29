@@ -1,12 +1,18 @@
 name: CI
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 env:
   AWS_DEFAULT_REGION: us-east-1
   AWS_ECR_REPO: jonathans
 
 jobs:
-  build:
-    name: CI
+  build_and_deploy:
+    name: 'Build & Deploy'
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout repo"
