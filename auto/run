@@ -3,3 +3,5 @@
 ./auto/download-imdb
 ./auto/gcp-authenticate
 ./auto/upload-bq
+
+echo "Done."
