@@ -144,6 +144,15 @@ Resources:
                   - ecs:DescribeTasks
                 Resource:
                   - "*"
+              - Sid: AllowPassRole
+                Effect: Allow
+                Action:
+                  - iam:PassRole
+                Resource:
+                  - "*"
+                Condition:
+                  StringLike:
+                    "iam:PassedToService": "ecs-tasks.amazonaws.com"
 
   LogGroup:
     Type: AWS::Logs::LogGroup
