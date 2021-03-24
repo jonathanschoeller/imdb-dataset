@@ -1,5 +1,5 @@
 # Summary
-This a service that downloads [IMDB datasets](https://contribute.imdb.com/dataset) and uploads them to Google BigQuery.
+This is a service that downloads [IMDB datasets](https://contribute.imdb.com/dataset) and uploads them to Google BigQuery.
 
 # Running Locally
 ## Prerequisites
